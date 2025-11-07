@@ -1,0 +1,122 @@
+<!DOCTYPE html> <!-- Definiše HTML5 dokument -->
+<html lang="sr">
+<head>
+  <meta charset="UTF-8"> <!-- Kodiranje karaktera UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsivni dizajn -->
+  <title>Ukusni posni zalogaji</title> <!-- Naslov sajta -->
+  <link rel="stylesheet" href="../css/style.css"> <!-- Link ka CSS fajlu -->
+  <!-- Font Awesome za hamburger ikonice -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Fa fa bars - hamburger meni-->
+
+</head>
+<body>
+
+<header> <!-- Zaglavlje sajta -->
+  <div class="logo-title"> <!-- Logo i naslov -->
+    <img src="../slike/logo.jpg" alt="Logo" class="logo"> <!-- Logo -->
+    <h1 class="naslov">Ukusni posni zalogaji</h1> <!-- Naslov sajta -->
+  </div>
+
+  <!-- Hamburger ikonica za mobilne uređaje -->
+  <i class="fas fa-bars" id="fa-bars"></i>
+
+  <nav> <!-- Navigacioni meni -->
+    <ul>
+      <li><a href="index.html">Početna</a></li>
+      <li><a href="kategorije.html">Kategorije recepata</a></li>
+      <li><a href="kalendar.html" class="active">Kalendar</a></li>
+      <li><a href="jelovnik.html" class="active">Jelovnik</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- SEKCIJA KARUSELA -->
+<section class="carousel-section"> 
+  <div class="carousel"> <!-- Karusel slika -->
+    <img id="carousel-img" src="../slike/slika1.jpg" alt="Slika 1" onclick="otvoriStranicu()">
+  </div>
+</section>
+
+<!-- SEKCIJA RECEPTI -->
+<section class="recipes">
+  <h2>Izdvojeni recepti</h2>
+  <div class="recipe-list">
+    <!-- Kartica recepta 1 -->
+    <div class="recipe-card" data-recept="1">
+      <img src="../slike/sarma.jpg" alt="Recept 1">
+      <h3>Posna sarma</h3>
+      <p>Tradicionalno jelo sa pečurkama i pirinčem.</p>
+    </div>
+    <!-- Kartica recepta 2 -->
+    <div class="recipe-card" data-recept="2">
+      <img src="../slike/posne-orah-kocke.webp" alt="Recept 2">
+      <h3>Posni kolač</h3>
+      <p>Slatki zalogaji bez mlečnih proizvoda.</p>
+    </div>
+    <!-- Kartica recepta 3 -->
+    <div class="recipe-card" data-recept="3">
+      <img src="../slike/corba od povrca.jpg" alt="Recept 3">
+      <h3>Čorba od povrća</h3>
+      <p>Lagano i zdravo jelo puno vitamina.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEKCIJA DETALJI RECEPTA -->
+<section class="recept-detail-container">
+  <button id="backBtn">← Nazad</button>
+
+  <!-- Recept 1 -->
+  <div id="recept1" class="recept-detail">
+    <h2>Posna sarma</h2>
+    <img src="../slike/sarma.jpg" alt="Posna sarma">
+    <h3>Sastojci:</h3>
+    <ul>
+      <li>Pirinač</li>
+      <li>Pečurke</li>
+      <li>Kupus</li>
+    </ul>
+    <h3>Priprema:</h3>
+    <p>Napuni listove kupusa smesom od pirinča i pečuraka, uvij u sarme i kuvaj 40 minuta.</p>
+  </div>
+
+  <!-- Recept 2 -->
+  <div id="recept2" class="recept-detail">
+    <h2>Posni kolač</h2>
+    <img src="../slike/posne-orah-kocke.webp" alt="Posni kolač">
+    <h3>Sastojci:</h3>
+    <ul>
+      <li>Brašno</li>
+      <li>Orasi</li>
+      <li>Šećer</li>
+    </ul>
+    <h3>Priprema:</h3>
+    <p>Umešaj sve sastojke, peci u rerni na 180°C oko 25 minuta.</p>
+  </div>
+
+  <!-- Recept 3 -->
+  <div id="recept3" class="recept-detail">
+    <h2>Čorba od povrća</h2>
+    <img src="../slike/corba od povrca.jpg" alt="Čorba od povrća">
+    <h3>Sastojci:</h3>
+    <ul>
+      <li>Šargarepa</li>
+      <li>Krompir</li>
+      <li>Tikvica</li>
+    </ul>
+    <h3>Priprema:</h3>
+    <p>Prokuvaj povrće u vodi, dodaj začine po ukusu i krčkati 20 minuta.</p>
+  </div>
+</section>
+
+<footer>
+  <p>
+    <i>Ovaj sajt je izrađen za potrebe projekta iz predmeta WEB tehnologije. Kreator sajta: Ana Vukajlović 5/2020 IT</i><br>
+    © 2025 Ukusni posni zalogaji. All rights reserved.
+  </p>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

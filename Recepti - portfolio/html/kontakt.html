@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <!-- Omogućava podršku za srpska slova -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Omogućava responzivnost na mobilnim uređajima -->
+  <title>Kontakt i dodavanje recepta</title>
+  <!-- Povezivanje eksternog CSS fajla -->
+  <link rel="stylesheet" href="../css/styleKontakt.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Fa fa bars - hamburger meni-->
+
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-title">
+        <!-- Logo sajta -->
+        <img src="../slike/logo.jpg" alt="Logo" class="logo">
+        <!-- Glavni naslov sajta -->
+        <h1>Ukusni posni zalogaji</h1>
+    </div>
+
+    <!-- Hamburger ikonica za mobilne uređaje -->
+    <i class="fas fa-bars" id="fa-bars"></i>
+
+    <!-- Navigacioni meni -->
+    <nav>
+        <ul>
+          <li><a href="index.html">Početna</a></li>
+          <li><a href="kategorije.html">Kategorije recepata</a></li>
+          <li><a href="kalendar.html" class="active">Kalendar</a></li>
+          <li><a href="jelovnik.html" class="active">Jelovnik</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <!-- Kratki uvod -->
+  <p class="paragraf">Prijavite se i podelite svoje recepte sa drugima!</p>
+
+  <main>
+    <!-- SEKCIJA PRIJAVE -->
+    <section id="prijavaSekcija">
+      <h2>Prijava korisnika</h2>
+      <form id="prijavaForm" onsubmit="return validacijaPrijave()">
+
+        <!-- Polje za ime -->
+        <label for="name">Ime:</label>
+        <input type="text" id="name" name="name" oninput="checkName()">
+        <small id="nameMsg"></small>
+
+        <!-- Polje za prezime -->
+        <label for="surname">Prezime:</label>
+        <input type="text" id="surname" name="surname" oninput="checkSurname()">
+        <small id="surnameMsg"></small>
+
+        <!-- Polje za korisničko ime -->
+        <label for="username">Korisničko ime:</label>
+        <input type="text" id="username" name="username" oninput="checkUsername()">
+        <small id="usernameMsg"></small>
+
+        <!-- Polje za lozinku -->
+        <label for="password">Lozinka:</label>
+        <input type="password" id="password" name="password" oninput="checkPassword()">
+        <small id="passwordMsg"></small>
+
+        <!-- Polje za potvrdu lozinke -->
+        <label for="confirmPassword">Potvrdi lozinku:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" oninput="checkConfirmPassword()">
+        <small id="confirmPasswordMsg"></small>
+
+        <!-- Dugme za prijavu / registraciju -->
+        <button type="submit">Prijavi se</button>
+      </form>
+    </section>
+
+    <!-- SEKCIJA UNOSA RECEPTA (skrivena dok se ne registruje korisnik) -->
+    <section id="unosReceptaSekcija" style="display:none;">
+      <h2>Unos recepta</h2>
+      <form id="receptForm">
+
+        <!-- Naziv recepta -->
+        <label for="naziv">Naziv recepta:</label>
+        <input type="text" id="naziv" name="naziv" required>
+
+        <!-- Kategorija recepta -->
+        <label for="kategorija">Kategorija recepta:</label>
+        <select id="kategorija" name="kategorija" required>
+          <option value="">--Odaberite kategoriju--</option>
+          <option value="supe">Supe i čorbe</option>
+          <option value="glavna">Glavna jela</option>
+          <option value="salate">Salate</option>
+          <option value="poslastice">Poslastice</option>
+        </select>
+
+        <!-- Sastojci recepta -->
+        <label for="sastojci">Sastojci:</label>
+        <textarea id="sastojci" name="sastojci" rows="4" required></textarea>
+
+        <!-- Postupak pripreme -->
+        <label for="postupak">Postupak pripreme:</label>
+        <textarea id="postupak" name="postupak" rows="6" required></textarea>
+
+        <!-- Vreme pripreme -->
+        <label for="vreme">Vreme pripreme:</label>
+        <input type="text" id="vreme" name="vreme" required>
+
+        <!-- Datum postavljanja -->
+        <label for="datum">Datum postavljanja:</label>
+        <input type="date" id="datum" name="datum" required>
+
+        <!-- Dugme za slanje recepta -->
+        <button type="submit">Pošalji recept</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><i>Ovaj sajt je izrađen za potrebe projekta iz predmeta WEB tehnologije. Kreator sajta: Ana Vukajlović 5/2020 IT</i> <br>
+      © 2025 Ukusni posni zalogaji. All rights reserved.
+    </p>
+  </footer>
+
+  <!-- Povezivanje eksternog JS fajla za validaciju i funkcionalnost -->
+  <script src="../js/scriptKontakt.js"></script>
+
+</body>
+</html>
