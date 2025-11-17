@@ -12,8 +12,7 @@ const slike = [
 // Trenutni indeks
 let index = 0;
 
-// Selektujemo sve slike karusela
-const images = document.querySelectorAll(".carousel-img");
+
 
 // Kreiramo container za tačkice
 const carouselSection = document.querySelector(".carousel-section");
@@ -33,7 +32,9 @@ slike.forEach((_, i) => {
   dotsContainer.appendChild(dot);
 });
 
-// Prikaz slike po indeksu
+// Selektujemo sve slike karusela
+const images = document.querySelectorAll(".carousel-img");
+
 function showSlide(i) {
   index = i;
   images.forEach((img, j) => {
@@ -41,6 +42,7 @@ function showSlide(i) {
   });
   updateDots();
 }
+
 
 // Ažuriranje tačkica
 function updateDots() {

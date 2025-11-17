@@ -93,37 +93,33 @@ nav ul li a:hover {
 }
 
 .carousel {
+  position: relative;
   width: 100%;
   max-width: 800px;
   aspect-ratio: 16/9;
   overflow: hidden;
   border-radius: 15px;
-  position: relative;
-  margin: 0 auto;
 }
 
-/* Slike unutar karusela */
 .carousel-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* slike se lepo skaliraju da popune karusel */
-  display: none;     /* sve osim aktivne sakrij */
-  position: absolute; /* sve slike se slažu jedna preko druge */
+  position: absolute;
   top: 0;
   left: 0;
-  cursor: pointer;
-  transition: opacity 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.7s ease-in-out;
+  cursor: pointer;
 }
 
 .carousel-img.active {
-  display: block;  /* samo aktivna slika se vidi */
   opacity: 1;
+  z-index: 1;
 }
 
 .carousel img:hover {
-  transform: scale(1.05); /* malo zumira sliku kad se pređe mišem */
+  transform: scale(1.02); /* blago zumiranje */
 }
 
 /* Tačke ispod karusela */
