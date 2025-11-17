@@ -109,7 +109,7 @@ nav ul li a:hover {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 0.7s ease-in-out;
+  transition: opacity 0.7s ease-in-out, transform 0.5s ease; /* dodali smo lagani transform prelaz */
   cursor: pointer;
 }
 
@@ -118,9 +118,10 @@ nav ul li a:hover {
   z-index: 1;
 }
 
-.carousel img:hover {
-  transform: scale(1.02); /* blago zumiranje */
+.carousel-img:hover {
+  transform: scale(1.03); /* malo uvećanje, nežan efekat */
 }
+
 
 /* Tačke ispod karusela */
 .carousel-dots {
