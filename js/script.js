@@ -1,18 +1,27 @@
+// ======================
 // KARUSEL
+// ======================
+
+// Niz slika i linkova
 const slike = [
-  { src: "../Recepti/slike/slika1.jpg", link: "kategorije.html" },
-  { src: "../Recepti/slike/slika2.jpg", link: "kalendar.html" },
-  { src: "../Recepti/slike/slika3.png", link: "kontakt.html" }
+  { src: "../Recepti/slike/slika1.jpg", link: "../Recepti/html/kategorije.html" },
+  { src: "../Recepti/slike/slika2.jpg", link: "../Recepti/html/kalendar.html" },
+  { src: "../Recepti/slike/slika3.png", link: "../Recepti/html/kontakt.html" }
 ];
 
+// Trenutni indeks
 let index = 0;
+
+// Selektujemo sve slike karusela
 const images = document.querySelectorAll(".carousel-img");
+
+// Kreiramo container za tačkice
 const carouselSection = document.querySelector(".carousel-section");
 const dotsContainer = document.createElement("div");
 dotsContainer.classList.add("carousel-dots");
 carouselSection.appendChild(dotsContainer);
 
-// Tačkice
+// Kreiramo tačkice
 slike.forEach((_, i) => {
   const dot = document.createElement("span");
   dot.classList.add("dot");
@@ -24,6 +33,7 @@ slike.forEach((_, i) => {
   dotsContainer.appendChild(dot);
 });
 
+// Prikaz slike po indeksu
 function showSlide(i) {
   index = i;
   images.forEach((img, j) => {
@@ -32,6 +42,7 @@ function showSlide(i) {
   updateDots();
 }
 
+// Ažuriranje tačkica
 function updateDots() {
   const dots = document.querySelectorAll(".dot");
   dots.forEach((d, i) => {
@@ -39,32 +50,43 @@ function updateDots() {
   });
 }
 
+// Sledeća slika (automatski)
 function nextSlide() {
   index = (index + 1) % slike.length;
   showSlide(index);
 }
 
+// Automatsko menjanje svake 3 sekunde
 let interval = setInterval(nextSlide, 3000);
 
+// Restart intervala
 function resetInterval() {
   clearInterval(interval);
   interval = setInterval(nextSlide, 3000);
 }
 
+// Klik na sliku otvara link
 function otvoriStranicu() {
   window.open(slike[index].link, "_blank");
 }
 
+// Prikaz prve slike odmah
+showSlide(0);
+
+// ======================
 // HAMBURGER MENU
+// ======================
 document.addEventListener("DOMContentLoaded", function() {
   const menuToggle = document.getElementById("fa-bars");
   const navMenu = document.querySelector("nav ul");
-  menuToggle.addEventListener("click", function() {
+  menuToggle.addEventListener("click", () => {
       navMenu.classList.toggle('show');
   });
 });
 
+// ======================
 // RECEPTI
+// ======================
 const recipeCards = document.querySelectorAll('.recipe-card');
 const receptContainer = document.querySelector('.recept-detail-container');
 const backBtn = document.getElementById('backBtn');
@@ -72,7 +94,11 @@ const backBtn = document.getElementById('backBtn');
 recipeCards.forEach(card => {
   card.addEventListener('click', () => {
       const id = 'recept' + card.dataset.recept;
+
+      // Sakrij sve detalje
       document.querySelectorAll('.recept-detail').forEach(r => r.style.display = 'none');
+
+      // Prikaz izabranog recepta
       const recept = document.getElementById(id);
       if(recept) {
           recept.style.display = 'block';
@@ -83,6 +109,7 @@ recipeCards.forEach(card => {
   });
 });
 
+// Dugme "Nazad"
 backBtn.addEventListener('click', () => {
   receptContainer.style.display = 'none';
   document.querySelector('.recipes').style.display = 'block';
