@@ -4,9 +4,9 @@
 
 // Niz slika i linkova
 const slike = [
-  { src: "../Recepti/slike/slika1.jpg", link: "../Recepti/html/kategorije.html" },
-  { src: "../Recepti/slike/slika2.jpg", link: "../Recepti/html/kalendar.html" },
-  { src: "../Recepti/slike/slika3.png", link: "../Recepti/html/kontakt.html" }
+  { src: "../slike/slika1.jpg", link: "../Recepti/html/kategorije.html" },
+  { src: "../slike/slika2.jpg", link: "../Recepti/html/kalendar.html" },
+  { src: "../slike/slika3.png", link: "../Recepti/html/kontakt.html" }
 ];
 
 // Trenutni indeks
