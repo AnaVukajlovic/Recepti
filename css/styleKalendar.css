@@ -1,0 +1,307 @@
+/* Podešavanje svih elemenata u stranici */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+  background: #FFEAEA;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background: #d77a61;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* Logo i naslov */
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.logo-title h1 {
+  font-size: 30px;
+}
+
+.logo {
+  width: 50px;
+}
+
+/* Meni */
+nav {
+  flex-grow: 1;
+  order: 1;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: color 0.2s, font-size 0.2s;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  color: #fff200;
+  text-decoration: underline;
+  font-size: 22px;
+}
+
+/* Fa fa bars - hamburger meni */
+#fa-bars {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  order: 2;
+  margin-left: auto;
+}
+
+/* Kalendar */
+h2 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 28px;
+}
+
+.calendar-container {
+  width: 700px;
+  max-width: 90%;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #fff;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-header h2 {
+  margin: 0;
+  font-size: 22px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.calendar-header button {
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendar-grid div {
+  border: 1px solid #ccc;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+  text-align: center;
+  font-size: 16px;
+  word-wrap: break-word;
+}
+
+.calendar-grid div.post {
+  background-color: #ffcccc;
+}
+
+.calendar-grid div.holiday {
+  background-color: #cce5ff;
+  font-weight: bold;
+}
+
+.calendar-grid div.weekend {
+  background-color: #f0f0f0;
+}
+
+.calendar-grid div:hover {
+  background-color: #e0e0e0;
+}
+
+/* Legenda */
+.legend {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.legend div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.post-box, .holiday-box, .weekend-box {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.post-box { 
+  background-color: #ffcccc; 
+}
+
+.holiday-box { 
+  background-color: #cce5ff; 
+}
+
+.weekend-box { 
+  background-color: #f0f0f0; 
+}
+
+/* Footer */
+footer {
+  background: #d77a61;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: auto; /* footer uvek na dnu */
+}
+
+/* Responyivni dizajn */
+
+/* FA-BARS i navbar za mobilne */
+@media (max-width: 800px) {
+  #fa-bars {
+    display: block;
+  }
+  .logo-title h1 {
+    font-size: 24px; 
+  }
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    background-color: #d77a61;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+  }
+  nav ul.show {
+    display: flex;
+  }
+  nav ul li {
+    padding: 10px 0;
+    border-top: 1px solid #c77a61;
+    text-align: center;
+  }
+}
+
+/* Kalendar za srednje ekrane */
+@media (max-width: 700px) {
+  .calendar-grid div, .weekdays div {
+    min-height: 60px;
+    font-size: 14px;
+  }
+
+  .logo-title h1 {
+    font-size: 18px; 
+  }
+
+  .calendar-header h2 {
+    font-size: 18px;
+  }
+  .calendar-header button {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+}
+
+/* Kalendar i naslov za male ekrane */
+@media (max-width: 500px) {
+  h2 {
+    font-size: 22px;
+  }
+  .logo-title h1 {
+    font-size: 10px; 
+  }
+  .calendar-grid div, .weekdays div {
+    min-height: 50px;
+    font-size: 12px;
+  }
+  .calendar-header h2 {
+    font-size: 16px;
+  }
+  .calendar-header button {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+  .legend {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Kalendar i naslov za velike ekrane 1024px */
+@media (max-width: 1024px) {
+  h2 {
+    font-size: 28px;
+  }
+  .logo-title h1 {
+    font-size: 24px;
+  }
+  .calendar-header h2 {
+    font-size: 22px;
+  }
+  .calendar-grid div, .weekdays div {
+    min-height: 80px;
+    font-size: 16px;
+  }
+  .calendar-header button {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+}
